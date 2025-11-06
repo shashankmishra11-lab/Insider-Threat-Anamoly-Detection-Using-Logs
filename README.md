@@ -1,80 +1,110 @@
-# Insider Threat Detection System
+# Insider Threat Anomaly Detection (Logs)
 
-A web-based application that uses AI to detect insider threats from access logs and displays anomalies on an interactive dashboard. Optimized for macOS with Apple Silicon.
+A Flask web app that ingests access/log data, scores it with an **Isolation Forest** baseline, and visualizes anomalies in a dashboard.
 
-## Features
+---
 
-- AI-powered anomaly detection in access logs
-- Interactive web dashboard
-- Real-time log file processing
-- Automated threat detection
-- Visualization of user activity patterns
-- Export functionality for reports
-- Optimized for Apple Silicon
+## ✨ Highlights
+- Web UI with upload + results views (Flask + Jinja2 templates)
+- Baseline unsupervised model (Isolation Forest) for fast anomaly scoring
+- Simple project layout: `app.py`, `models/`, `templates/`, `static/`, `data/`
+- MIT licensed
 
-## Prerequisites
+---
 
-- macOS with Apple Silicon
-- Python 3.11+
-- pip (Python package installer)
-
-## Installation
-
-1. Clone the repository:
-```bash
-git init
-git add .
-git commit -m "Initial commit"
+## 🧱 Project Structure
 ```
+.
+├─ app.py                 # Flask entrypoint / routes
+├─ models/                # detection & preprocessing modules
+├─ templates/             # HTML templates
+├─ static/                # CSS/JS assets
+├─ data/                  # sample data / local artifacts (avoid committing PII)
+├─ requirements.txt
+├─ README.md
+├─ ROADMAP.md
+└─ LICENSE
 
-2. Create and activate a virtual environment:
+````
+
+---
+
+## 🚀 Quickstart (macOS / Apple Silicon)
+
 ```bash
+# 1) Create virtual environment
 python -m venv .venv
-source .venv/bin/activate
-```
+source .venv/bin/activate       # Windows: .venv\Scripts\activate
 
-3. Install required packages:
-```bash
+# 2) Install dependencies
 pip install -r requirements.txt
-```
 
-## Project Structure
-
-```
-project/
-├── app.py                 # Main Flask application
-├── models/
-│   ├── __init__.py
-│   ├── detector.py       # Anomaly detection model
-│   └── preprocessor.py   # Data preprocessing utilities
-├── static/
-│   ├── css/             # Stylesheets
-│   └── js/              # JavaScript files
-├── templates/           # HTML templates
-├── data/               # Sample data and database
-└── requirements.txt    # Project dependencies
-```
-
-## Usage
-
-1. Start the Flask application:
-```bash
+# 3) Run the app
 python app.py
+
+# 4) Open in browser
+# http://localhost:5000
+
+````
+
+> 💡 Tip: Use a clean virtual environment and keep raw logs out of version control.
+
+---
+
+## 🧩 Typical Workflow
+
+1. Upload access/log file in the UI.
+2. App parses and preprocesses the data (see `models/` folder).
+3. Isolation Forest scores events or entities.
+4. Dashboard renders anomalies and supporting context.
+
+---
+
+## 🧪 Example Input Format
+
+Example CSV layout:
+
+```
+timestamp,user,host,action,resource,bytes,success
+2025-03-11T09:15:43Z,alice,laptop-01,LOGIN,Okta,0,true
 ```
 
-2. Open a web browser and navigate to `http://localhost:5000`
+You can modify the parser to match your specific log schema.
 
-3. Upload your access log file through the web interface
+---
 
-4. View the analysis results and anomaly detections in the dashboard
+## ⚙️ Configuration
 
-## Model Details
+* Model and thresholds currently defined in code under `models/`.
+* For larger datasets, you can batch processing or externalize config to YAML later.
 
-The system uses a combination of:
-- Isolation Forest for anomaly detection
-- Time-series analysis for behavior patterns
-- Core ML optimization for Apple Silicon
+---
 
-## License
+## 🛡️ Security Notes
 
-MIT License
+* Avoid uploading or committing real logs — use sanitized samples in `data/`.
+* Hash usernames/IPs for demos when possible.
+* Validate file types before processing user uploads.
+
+---
+
+## 📚 Additional Documentation
+
+* [docs/USAGE.md](docs/USAGE.md): Detailed usage and troubleshooting guide
+* [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): System design and component overview
+* [ROADMAP.md](ROADMAP.md): Planned improvements and milestones
+
+---
+
+## 🤝 Contributing
+
+Pull requests and feature suggestions are welcome!
+Please open an issue first to discuss major changes.
+
+---
+
+## 📝 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+````
