@@ -1,0 +1,155 @@
+Insider Threat Detection System - Presentation Outline
+
+1. Project Overview
+   - Title: Modern Insider Threat Detection System
+   - Purpose: Real-time monitoring and detection of suspicious insider activities
+   - Target Audience: Organizations concerned with data security and insider threats
+
+2. Key Features
+   a) Modern User Interface
+      - Dark theme with glass morphism effects
+      - Responsive design optimized for desktop/laptop screens
+      - Interactive elements with smooth animations
+      - Real-time data visualization
+   
+   b) Core Functionality
+      - CSV log file processing and analysis
+      - Anomaly detection in user activities
+      - Risk level classification (High, Medium, Low)
+      - Real-time statistics and monitoring
+
+3. Technical Architecture
+   a) Frontend
+      - HTML5, CSS3, JavaScript
+      - Bootstrap 5 framework
+      - Modern UI components with Boxicons
+      - Custom animations and transitions
+      
+   b) Backend
+      - Python Flask framework
+      - SQLite database (anomalies.db)
+      - Machine learning-based detection
+      - RESTful API endpoints
+
+4. User Experience
+   a) Upload Interface
+      - Drag-and-drop file upload
+      - Immediate visual feedback
+      - Progress indication
+      - File validation
+   
+   b) Dashboard Elements
+      - Total anomalies counter
+      - High-risk users tracker
+      - Latest detection timestamp
+      - Interactive data tables
+      
+   c) Visual Design
+      - Color scheme: Dark (#0E0E12) with teal (#00B7C2) and violet (#9B5DE5) accents
+      - Glass effects and gradients
+      - Consistent visual hierarchy
+      - Intuitive navigation
+
+5. Data Processing Flow
+   - File upload and validation
+   - Log parsing and preprocessing
+   - Anomaly detection algorithm
+   - Risk assessment
+   - Results visualization
+
+6. Security Features
+   - Input validation and sanitization
+   - Secure file handling
+   - Data encryption
+   - Access control
+
+7. Benefits and Impact
+   - Early detection of suspicious activities
+   - Reduced risk of data breaches
+   - Real-time monitoring capability
+   - User-friendly interface for security teams
+
+8. Future Enhancements
+   - Machine learning model improvements
+   - Additional data visualization options
+   - Real-time alerting system
+   - Integration with SIEM systems
+   - Mobile responsiveness
+
+9. Demo Highlights
+   - File upload process
+   - Real-time analysis
+   - Dashboard interaction
+   - Risk level identification
+   - Data exploration features
+
+10. Conclusion
+    - Project achievements
+    - Security impact
+    - Scalability potential
+    - Value proposition
+
+Note: This presentation should take approximately 15-20 minutes, with emphasis on the visual demo and practical application of the system.
+
+Technical Appendix - Libraries, Tools & Functions
+
+1. Frontend Libraries
+   - Bootstrap 5: Frontend framework for responsive design
+   - Boxicons: Modern icon library for UI elements
+   - Chart.js: Interactive data visualization library
+   - LottieFiles: Lightweight animation library for loading states
+
+2. Backend Libraries (Python)
+   - Flask: Web framework for backend API
+   - SQLite3: Database management
+   - Pandas: Data manipulation and analysis
+   - NumPy: Numerical computing and array operations
+   - Scikit-learn: Machine learning algorithms for anomaly detection
+
+3. Key Functions & Components
+
+   a) Flask Routes
+      - /upload: Handles file upload and processing
+      - /analyze: Processes log data and detects anomalies
+      - /stats: Returns real-time statistics
+      - /api/anomalies: RESTful endpoint for anomaly data
+
+   b) Data Processing
+      - preprocess_logs(): Cleans and formats input data
+      - detect_anomalies(): Implements anomaly detection algorithm
+      - calculate_risk_score(): Assigns risk levels to activities
+
+   c) Database Operations
+      - save_anomaly(): Stores detected anomalies
+      - get_stats(): Retrieves statistical summaries
+      - update_risk_levels(): Updates user risk profiles
+
+   d) Frontend Functions
+      - initializeCharts(): Sets up data visualizations
+      - updateStats(): Real-time dashboard updates
+      - handleFileUpload(): Manages file upload UI/UX
+      - renderAnomalyTable(): Displays anomaly data
+
+4. Development Tools
+   - VS Code: Primary IDE
+   - Git: Version control
+   - Chrome DevTools: Frontend debugging
+   - SQLite Browser: Database management
+
+5. Key CSS Features
+   - CSS Variables: Dynamic theming
+   - Flexbox/Grid: Responsive layouts
+   - Glass Morphism: Modern UI effects
+   - CSS Animations: Smooth transitions
+
+6. JavaScript Components
+   - Fetch API: Asynchronous data requests
+   - Event Listeners: Interactive UI elements
+   - DOM Manipulation: Dynamic content updates
+   - WebSocket: Real-time data updates
+
+7. Security Implementations
+   - Input Sanitization: prevent XSS attacks
+   - CSRF Protection: secure form submissions
+   - File Validation: secure upload handling
+   - Error Handling: graceful error management
